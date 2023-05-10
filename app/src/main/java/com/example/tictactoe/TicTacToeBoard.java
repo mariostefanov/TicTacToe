@@ -23,7 +23,7 @@ public class TicTacToeBoard extends View {
     private boolean winningLine = false;
     private final Paint paint = new Paint();
     private int cellSize = getWidth() / 3;
-    private GameLogic game;
+    private final GameLogic game;
 
     public TicTacToeBoard(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -64,7 +64,6 @@ public class TicTacToeBoard extends View {
             paint.setColor(winningLineColor);
             drawWinningLine(canvas);
         }
-
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -97,7 +96,6 @@ public class TicTacToeBoard extends View {
                 }
             }
 
-
             invalidate();
             return true;
         }
@@ -108,11 +106,11 @@ public class TicTacToeBoard extends View {
         paint.setColor(boardColor);
         paint.setStrokeWidth(16);
 
-        for (int c = 1; c < 3; c++) {
+        for (int c = 0; c <= 3; c++) {
             canvas.drawLine(cellSize * c, 0, cellSize * c, canvas.getWidth(), paint);
         }
 
-        for (int r = 1; r < 3; r++) {
+        for (int r = 0; r <= 3; r++) {
             canvas.drawLine(0, cellSize * r, canvas.getWidth(), cellSize * r, paint);
         }
     }
@@ -192,8 +190,6 @@ public class TicTacToeBoard extends View {
             case 4:
                 drawDiagonalLinePositive(canvas);
                 break;
-
-
 
         }
     }

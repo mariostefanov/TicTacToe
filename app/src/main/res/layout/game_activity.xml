@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GameDisplay"
-    android:background="#D7CCC5">
+    android:background="#ADADAD">
 
     <TextView
         android:id="@+id/playerDisplay"
